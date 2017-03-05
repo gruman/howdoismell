@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+<p id="smell"></p>
+
+<script src="smelldb.json" type="text/javascript"></script>
+<script>
+	
+	var nouns = smelldb.words.nouns // array of nouns
+	var verbs = smelldb.words.verbs // array of verbs
+	
+	nouns.sort(function(a, b){return 0.5 - Math.random()}) // randomize
+	verbs.sort(function(a, b){return 0.5 - Math.random()}) // randomize
+
+	var noun1 = nouns[1].noun // first noun
+	var noun2 = nouns[2].noun // second noun will be different from the first
+	var verb = verbs[0].verb // verb
+	
+	// add to HTML
+	document.getElementById('smell').innerHTML = 'You smell like ' + noun1 + ', ' + verb + ' ' + noun2 + '.'
+
+</script>
+</body>
+</html>
